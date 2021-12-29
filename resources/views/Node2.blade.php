@@ -208,21 +208,19 @@
                    </tr>
                  </thead>
                  <tbody>
-                   <?php while($node = mysqli_fetch_assoc($result)):?>
-                    <tr>
-                      <th scope="row"><?= $node["WaterLevel"]?></th>
-                      <td><?= $node["Temperature"]?></td>
-                      <td><?= $node["Humidity"]?></td>
-                      <td><?= $node["Waktu"]?></td>
-                    </tr>
-                   <?php endwhile; ?>
+                  @foreach($Node2 as $item)
+                  <tr>
+                   <th scope="row"><?= $item->WaterLevel?></th>
+                   <td><?= $item->Temperature?></td>
+                   <td><?= $item->Humidity?></td>
+                   <td><?= $item->Waktu?></td>
+                  </tr>
+                 @endforeach
                </tbody>
              </table>
-
-
-
-                  </tbody>
-                </table>
+               <div class="center">
+                 {{$Node2->links()}}
+               </div>
               </div>
             </div>
           </div>

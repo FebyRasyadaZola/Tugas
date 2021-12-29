@@ -199,28 +199,27 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th scope="col">Id Node</th>
-                     
+                      <th scope="col">Id Node</th>                    
                       <th scope="col">Nilai</th>
                       <th scope="col">Waktu</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php while($node = mysqli_fetch_assoc($result)):?>
+                    @foreach($humidity as $item)
                      <tr>
-                       <th scope="row"><?= $node["idnode"]?></th>
-                       
-                       <td><?= $node["Humidity"]?></td>
-                       <td><?= $node["Waktu"]?></td>
+                      <th scope="row"><?= $item->idnode?></th>
+                      <td><?= $item->Humidity?></td>
+                      <td><?= $item->Waktu?></td>
                      </tr>
-                    <?php endwhile; ?>
+                    @endforeach
                 </tbody>
               </table>
 
+              <div class="center">
+                {{$humidity->links()}}
+              </div>  
 
-
-                  </tbody>
-                </table>
+                
               </div>
             </div>
           </div>
