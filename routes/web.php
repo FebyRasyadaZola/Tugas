@@ -14,8 +14,6 @@ use App\Http\Controllers\idnodeController;
 |
 */
 
-Route::get('/', [idnodeController::class, 'idnodeController']);
-
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -25,31 +23,20 @@ Route::get('dashboard', function () {
 });
 
 
-Route::get('waterlevel', function () {
-    return view('waterlevel');
-});
+Route::get('/waterlevel', [idnodeController::class, 'Air']);
 
-Route::get('temperature', function () {
-    return view('temperature');
-});
+Route::get('/temperature', [idnodeController::class, 'Suhu']);
 
-Route::get('humidity', function () {
-    return view('humidity');
-});
+Route::get('/humidity', [idnodeController::class, 'Kelembaban']);
 
-Route::get('Node1', function () {
-    return view('Node1');
-});
+Route::get('/Node1', [idnodeController::class, 'n1']);
 
-Route::get('Node2', function () {
-    return view('Node2');
-});
+Route::get('/Node2', [idnodeController::class, 'n2']);
 
-Route::get('Node3', function () {
-    return view('Node3');
-});
+Route::get('/Node3', [idnodeController::class, 'n3']);
 
-Route::get('Node4', function () {
-    return view('Node4');
-});
+Route::get('/Node4', [idnodeController::class, 'n4']);
+
+
+
 
