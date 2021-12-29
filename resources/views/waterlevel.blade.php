@@ -105,9 +105,6 @@
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
               <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-               
-               
-                
               </ul>
             </li>
           </ul>
@@ -149,21 +146,20 @@
                       <th scope="col">Nilai</th>
                       <th scope="col">Waktu</th>
                     </tr>
-                  </thead>
-                  
+                  </thead>                 
                   <tbody>
-                    @foreach($id_node as $data)
+                    @foreach($waterlevel as $item)
                       <tr>
-                       <th scope="row"><?= $data["idnode"]?></th>
-                       <td><?= $data["WaterLevel"]?></td>
-                       <td><?= $data["Waktu"]?></td>
+                       <th scope="row"><?= $item->idnode?></th>
+                       <td><?= $item->WaterLevel?></td>
+                       <td><?= $item->Waktu?></td>
                       </tr>
                     @endforeach
                   </tbody>
-
                 </table>
-                <div class="pull-right">
-                  {{$id_node->links()}}
+                <br/>
+                <div class="center">
+                  {{$waterlevel->links()}}
                 </div>
               </div>
             </div>
